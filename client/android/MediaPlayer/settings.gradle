@@ -1,0 +1,3 @@
+include ':mediasdk'
+include ':app'
+rootProject.name = "MediaPlayer"
