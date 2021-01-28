@@ -1,0 +1,3 @@
+include ':proxysdk'
+include ':app'
+rootProject.name = "RealProxy"
