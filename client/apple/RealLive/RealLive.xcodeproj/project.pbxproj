@@ -18,6 +18,7 @@
 		572F659E25C2C13B000C1410 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F659D25C2C13B000C1410 /* AVFoundation.framework */; };
 		572F65A125C2C18E000C1410 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F65A025C2C18E000C1410 /* ReplayKit.framework */; };
 		572F65A725C2C1AB000C1410 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F65A625C2C1AB000C1410 /* CoreMedia.framework */; };
+		572F66AC25C43238000C1410 /* H264Encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 572F66AB25C43238000C1410 /* H264Encoder.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		572F65A025C2C18E000C1410 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/ReplayKit.framework; sourceTree = DEVELOPER_DIR; };
 		572F65A325C2C197000C1410 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		572F65A625C2C1AB000C1410 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		572F66AB25C43238000C1410 /* H264Encoder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = H264Encoder.mm; sourceTree = "<group>"; };
+		572F66AF25C43247000C1410 /* H264Encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264Encoder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				572F658A25C2C0C6000C1410 /* LaunchScreen.storyboard */,
 				572F658D25C2C0C6000C1410 /* Info.plist */,
 				572F658E25C2C0C6000C1410 /* main.m */,
+				572F66AB25C43238000C1410 /* H264Encoder.mm */,
+				572F66AF25C43247000C1410 /* H264Encoder.h */,
 			);
 			path = RealLive;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				572F657E25C2C0C6000C1410 /* AppDelegate.m in Sources */,
 				572F658F25C2C0C6000C1410 /* main.m in Sources */,
 				572F658125C2C0C6000C1410 /* SceneDelegate.m in Sources */,
+				572F66AC25C43238000C1410 /* H264Encoder.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
