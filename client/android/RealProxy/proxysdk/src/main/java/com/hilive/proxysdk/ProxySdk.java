@@ -8,5 +8,17 @@ public class ProxySdk {
     public ProxySdk() {
     }
 
+    synchronized public boolean login() {
+        return true;
+    }
+
+    synchronized public boolean bind() {
+        return true;
+    }
+
+    synchronized public boolean logout() {
+        return true;
+    }
+
     public native String stringFromJNI();
 }

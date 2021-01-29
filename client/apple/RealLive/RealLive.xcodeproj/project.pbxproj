@@ -7,79 +7,113 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5731F57325C292040089CD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731F57225C292040089CD30 /* AppDelegate.m */; };
-		5731F57625C292040089CD30 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731F57525C292040089CD30 /* ViewController.m */; };
-		5731F57825C292040089CD30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5731F57725C292040089CD30 /* Assets.xcassets */; };
-		5731F57B25C292040089CD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5731F57925C292040089CD30 /* Main.storyboard */; };
-		5731F57E25C292040089CD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5731F57D25C292040089CD30 /* main.m */; };
+		572F657E25C2C0C6000C1410 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F657D25C2C0C6000C1410 /* AppDelegate.m */; };
+		572F658125C2C0C6000C1410 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F658025C2C0C6000C1410 /* SceneDelegate.m */; };
+		572F658425C2C0C6000C1410 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 572F658325C2C0C6000C1410 /* ViewController.mm */; };
+		572F658725C2C0C6000C1410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572F658525C2C0C6000C1410 /* Main.storyboard */; };
+		572F658925C2C0C6000C1410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572F658825C2C0C6000C1410 /* Assets.xcassets */; };
+		572F658C25C2C0C6000C1410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572F658A25C2C0C6000C1410 /* LaunchScreen.storyboard */; };
+		572F658F25C2C0C6000C1410 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F658E25C2C0C6000C1410 /* main.m */; };
+		572F659C25C2C135000C1410 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F659B25C2C135000C1410 /* VideoToolbox.framework */; };
+		572F659E25C2C13B000C1410 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F659D25C2C13B000C1410 /* AVFoundation.framework */; };
+		572F65A125C2C18E000C1410 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F65A025C2C18E000C1410 /* ReplayKit.framework */; };
+		572F65A725C2C1AB000C1410 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572F65A625C2C1AB000C1410 /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5731F56E25C292040089CD30 /* RealLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5731F57125C292040089CD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5731F57225C292040089CD30 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5731F57425C292040089CD30 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5731F57525C292040089CD30 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5731F57725C292040089CD30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5731F57A25C292040089CD30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5731F57C25C292040089CD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5731F57D25C292040089CD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5731F57F25C292040089CD30 /* RealLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealLive.entitlements; sourceTree = "<group>"; };
+		572F657925C2C0C6000C1410 /* RealLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		572F657C25C2C0C6000C1410 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		572F657D25C2C0C6000C1410 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		572F657F25C2C0C6000C1410 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		572F658025C2C0C6000C1410 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		572F658225C2C0C6000C1410 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		572F658325C2C0C6000C1410 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		572F658625C2C0C6000C1410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		572F658825C2C0C6000C1410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		572F658B25C2C0C6000C1410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		572F658D25C2C0C6000C1410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		572F658E25C2C0C6000C1410 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		572F659725C2C0F0000C1410 /* RealLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealLive.entitlements; sourceTree = "<group>"; };
+		572F659B25C2C135000C1410 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		572F659D25C2C13B000C1410 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		572F65A025C2C18E000C1410 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/ReplayKit.framework; sourceTree = DEVELOPER_DIR; };
+		572F65A325C2C197000C1410 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		572F65A625C2C1AB000C1410 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5731F56B25C292040089CD30 /* Frameworks */ = {
+		572F657625C2C0C6000C1410 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572F65A725C2C1AB000C1410 /* CoreMedia.framework in Frameworks */,
+				572F65A125C2C18E000C1410 /* ReplayKit.framework in Frameworks */,
+				572F659E25C2C13B000C1410 /* AVFoundation.framework in Frameworks */,
+				572F659C25C2C135000C1410 /* VideoToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5731F56525C292040089CD30 = {
+		572F657025C2C0C6000C1410 = {
 			isa = PBXGroup;
 			children = (
-				5731F57025C292040089CD30 /* RealLive */,
-				5731F56F25C292040089CD30 /* Products */,
+				572F657B25C2C0C6000C1410 /* RealLive */,
+				572F657A25C2C0C6000C1410 /* Products */,
+				572F659A25C2C135000C1410 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		5731F56F25C292040089CD30 /* Products */ = {
+		572F657A25C2C0C6000C1410 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5731F56E25C292040089CD30 /* RealLive.app */,
+				572F657925C2C0C6000C1410 /* RealLive.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5731F57025C292040089CD30 /* RealLive */ = {
+		572F657B25C2C0C6000C1410 /* RealLive */ = {
 			isa = PBXGroup;
 			children = (
-				5731F57125C292040089CD30 /* AppDelegate.h */,
-				5731F57225C292040089CD30 /* AppDelegate.m */,
-				5731F57425C292040089CD30 /* ViewController.h */,
-				5731F57525C292040089CD30 /* ViewController.m */,
-				5731F57725C292040089CD30 /* Assets.xcassets */,
-				5731F57925C292040089CD30 /* Main.storyboard */,
-				5731F57C25C292040089CD30 /* Info.plist */,
-				5731F57D25C292040089CD30 /* main.m */,
-				5731F57F25C292040089CD30 /* RealLive.entitlements */,
+				572F659725C2C0F0000C1410 /* RealLive.entitlements */,
+				572F657C25C2C0C6000C1410 /* AppDelegate.h */,
+				572F657D25C2C0C6000C1410 /* AppDelegate.m */,
+				572F657F25C2C0C6000C1410 /* SceneDelegate.h */,
+				572F658025C2C0C6000C1410 /* SceneDelegate.m */,
+				572F658225C2C0C6000C1410 /* ViewController.h */,
+				572F658325C2C0C6000C1410 /* ViewController.mm */,
+				572F658525C2C0C6000C1410 /* Main.storyboard */,
+				572F658825C2C0C6000C1410 /* Assets.xcassets */,
+				572F658A25C2C0C6000C1410 /* LaunchScreen.storyboard */,
+				572F658D25C2C0C6000C1410 /* Info.plist */,
+				572F658E25C2C0C6000C1410 /* main.m */,
 			);
 			path = RealLive;
+			sourceTree = "<group>";
+		};
+		572F659A25C2C135000C1410 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				572F65A625C2C1AB000C1410 /* CoreMedia.framework */,
+				572F65A325C2C197000C1410 /* Foundation.framework */,
+				572F65A025C2C18E000C1410 /* ReplayKit.framework */,
+				572F659D25C2C13B000C1410 /* AVFoundation.framework */,
+				572F659B25C2C135000C1410 /* VideoToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5731F56D25C292040089CD30 /* RealLive */ = {
+		572F657825C2C0C6000C1410 /* RealLive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5731F58225C292040089CD30 /* Build configuration list for PBXNativeTarget "RealLive" */;
+			buildConfigurationList = 572F659225C2C0C6000C1410 /* Build configuration list for PBXNativeTarget "RealLive" */;
 			buildPhases = (
-				5731F56A25C292040089CD30 /* Sources */,
-				5731F56B25C292040089CD30 /* Frameworks */,
-				5731F56C25C292040089CD30 /* Resources */,
+				572F657525C2C0C6000C1410 /* Sources */,
+				572F657625C2C0C6000C1410 /* Frameworks */,
+				572F657725C2C0C6000C1410 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -87,23 +121,23 @@
 			);
 			name = RealLive;
 			productName = RealLive;
-			productReference = 5731F56E25C292040089CD30 /* RealLive.app */;
+			productReference = 572F657925C2C0C6000C1410 /* RealLive.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5731F56625C292040089CD30 /* Project object */ = {
+		572F657125C2C0C6000C1410 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					5731F56D25C292040089CD30 = {
+					572F657825C2C0C6000C1410 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 5731F56925C292040089CD30 /* Build configuration list for PBXProject "RealLive" */;
+			buildConfigurationList = 572F657425C2C0C6000C1410 /* Build configuration list for PBXProject "RealLive" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,54 +145,64 @@
 				en,
 				Base,
 			);
-			mainGroup = 5731F56525C292040089CD30;
-			productRefGroup = 5731F56F25C292040089CD30 /* Products */;
+			mainGroup = 572F657025C2C0C6000C1410;
+			productRefGroup = 572F657A25C2C0C6000C1410 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5731F56D25C292040089CD30 /* RealLive */,
+				572F657825C2C0C6000C1410 /* RealLive */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5731F56C25C292040089CD30 /* Resources */ = {
+		572F657725C2C0C6000C1410 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5731F57825C292040089CD30 /* Assets.xcassets in Resources */,
-				5731F57B25C292040089CD30 /* Main.storyboard in Resources */,
+				572F658C25C2C0C6000C1410 /* LaunchScreen.storyboard in Resources */,
+				572F658925C2C0C6000C1410 /* Assets.xcassets in Resources */,
+				572F658725C2C0C6000C1410 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5731F56A25C292040089CD30 /* Sources */ = {
+		572F657525C2C0C6000C1410 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5731F57625C292040089CD30 /* ViewController.m in Sources */,
-				5731F57E25C292040089CD30 /* main.m in Sources */,
-				5731F57325C292040089CD30 /* AppDelegate.m in Sources */,
+				572F658425C2C0C6000C1410 /* ViewController.mm in Sources */,
+				572F657E25C2C0C6000C1410 /* AppDelegate.m in Sources */,
+				572F658F25C2C0C6000C1410 /* main.m in Sources */,
+				572F658125C2C0C6000C1410 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5731F57925C292040089CD30 /* Main.storyboard */ = {
+		572F658525C2C0C6000C1410 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5731F57A25C292040089CD30 /* Base */,
+				572F658625C2C0C6000C1410 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		572F658A25C2C0C6000C1410 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				572F658B25C2C0C6000C1410 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5731F58025C292040089CD30 /* Debug */ = {
+		572F659025C2C0C6000C1410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -209,15 +253,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		5731F58125C292040089CD30 /* Release */ = {
+		572F659125C2C0C6000C1410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,14 +306,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		5731F58325C292040089CD30 /* Debug */ = {
+		572F659325C2C0C6000C1410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -277,23 +322,22 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_ENTITLEMENTS = RealLive/RealLive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 823M6R4A85;
-				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = RealLive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hilive.RealLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		5731F58425C292040089CD30 /* Release */ = {
+		572F659425C2C0C6000C1410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -301,44 +345,43 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_ENTITLEMENTS = RealLive/RealLive.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 823M6R4A85;
-				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				INFOPLIST_FILE = RealLive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hilive.RealLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5731F56925C292040089CD30 /* Build configuration list for PBXProject "RealLive" */ = {
+		572F657425C2C0C6000C1410 /* Build configuration list for PBXProject "RealLive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5731F58025C292040089CD30 /* Debug */,
-				5731F58125C292040089CD30 /* Release */,
+				572F659025C2C0C6000C1410 /* Debug */,
+				572F659125C2C0C6000C1410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5731F58225C292040089CD30 /* Build configuration list for PBXNativeTarget "RealLive" */ = {
+		572F659225C2C0C6000C1410 /* Build configuration list for PBXNativeTarget "RealLive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5731F58325C292040089CD30 /* Debug */,
-				5731F58425C292040089CD30 /* Release */,
+				572F659325C2C0C6000C1410 /* Debug */,
+				572F659425C2C0C6000C1410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5731F56625C292040089CD30 /* Project object */;
+	rootObject = 572F657125C2C0C6000C1410 /* Project object */;
 }

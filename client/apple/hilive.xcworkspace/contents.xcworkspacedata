@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:MediaPlayer/MediaPlayer.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "module">
+      <FileRef
+         location = "group:../../module/common/common.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../module/device/device.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../../module/codec/codec.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "framework">
+      <FileRef
+         location = "group:../framework/livesdk/livesdk.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../framework/mediasdk/mediasdk.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../framework/proxysdk/proxysdk.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "demo">
+      <FileRef
+         location = "group:RealLive/RealLive.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:MediaPlayer/MediaPlayer.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
