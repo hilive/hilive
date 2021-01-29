@@ -12,6 +12,7 @@
 #import <CoreMedia/CMSampleBuffer.h>
 
 @protocol H264EncoderDelegate <NSObject>
+@optional
 - (void)onSps:(const uint8_t*)data size:(size_t)size;
 - (void)onPps:(const uint8_t*)data size:(size_t)size;
 - (void)onFrame:(const uint8_t*)data size:(size_t)size keyFrame:(BOOL)keyFrame;

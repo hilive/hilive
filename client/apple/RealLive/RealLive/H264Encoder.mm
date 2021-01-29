@@ -34,7 +34,9 @@ static void H264CompressCallback(
         OSStatus status,
         VTEncodeInfoFlags infoFlags,
         CM_NULLABLE CMSampleBufferRef sampleBuffer ) {
-    if (CMSampleBufferDataIsReady(sampleBuffer)) {
+    BOOL isValid = CMSampleBufferIsValid(sampleBuffer);
+    BOOL isReady = CMSampleBufferDataIsReady(sampleBuffer);
+    if (!isValid || !isReady) {
         return;
     }
 
@@ -122,7 +124,7 @@ static void H264CompressCallback(
         VTSessionSetProperty(self->session, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue);
         VTSessionSetProperty(self->session, kVTCompressionPropertyKey_ProfileLevel, kVTProfileLevel_H264_Baseline_AutoLevel);
         VTSessionSetProperty(self->session, kVTCompressionPropertyKey_AllowFrameReordering, kCFBooleanFalse);
-
+/*
         // 设置关键帧（GOPsize)间隔
         CFNumberRef  gopRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &gop);
         VTSessionSetProperty(self->session, kVTCompressionPropertyKey_MaxKeyFrameInterval, gopRef);
@@ -141,7 +143,7 @@ static void H264CompressCallback(
         int bitrateLimit = bitrate * 2;
         CFNumberRef bitrateLimitRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &bitrateLimit);
         VTSessionSetProperty(self->session, kVTCompressionPropertyKey_DataRateLimits, bitrateLimitRef);
-
+*/
         //start encode
         VTCompressionSessionPrepareToEncodeFrames(self->session);
     });
@@ -150,20 +152,14 @@ static void H264CompressCallback(
 - (void) encode:(CMSampleBufferRef )sampleBuffer {
     dispatch_sync(queue, ^{
         // Get the CV Image buffer
-        CVImageBufferRef imageBuffer = (CVImageBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
-        //            CVPixelBufferRef pixelBuffer = (CVPixelBufferRef)CMSampleBufferGetImageBuffer(sampleBuffer);
-
-        //CMTime pts = CMTimeMake(frameNO++, 1000);
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         CMTime pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);
         VTEncodeInfoFlags flags;
-
-        // Pass it to the encoder
         OSStatus statusCode = VTCompressionSessionEncodeFrame(self->session,
                                                               imageBuffer,
                                                               pts,
                                                               kCMTimeInvalid,
                                                               NULL, NULL, &flags);
-        // Check for error
         if (statusCode != noErr) {
             return;
         }
