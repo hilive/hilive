@@ -19,6 +19,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5724EA3F25C9C74C00B8392A /* media_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = media_config.h; sourceTree = "<group>"; };
 		572F662425C2ED52000C1410 /* libcommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,6 +37,7 @@
 		572F661B25C2ED52000C1410 = {
 			isa = PBXGroup;
 			children = (
+				5724EA3F25C9C74C00B8392A /* media_config.h */,
 				572F662525C2ED52000C1410 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -6,6 +6,14 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5724EA2925C9BE3D00B8392A /* device_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA2725C9BE3D00B8392A /* device_context.cpp */; };
+		5724EA2E25C9BF6F00B8392A /* camera_capture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA2C25C9BF6F00B8392A /* camera_capture.cpp */; };
+		5724EA3325C9C01800B8392A /* mic_capture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA3125C9C01800B8392A /* mic_capture.cpp */; };
+		5724EA3725C9C09F00B8392A /* app_capture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA3525C9C09F00B8392A /* app_capture.cpp */; };
+		5724EA3B25C9C0AD00B8392A /* sys_capture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA3925C9C0AD00B8392A /* sys_capture.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		572F664E25C2ED78000C1410 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,6 +27,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5724EA2725C9BE3D00B8392A /* device_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = device_context.cpp; sourceTree = "<group>"; };
+		5724EA2825C9BE3D00B8392A /* device_context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = device_context.hpp; sourceTree = "<group>"; };
+		5724EA2C25C9BF6F00B8392A /* camera_capture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera_capture.cpp; sourceTree = "<group>"; };
+		5724EA2D25C9BF6F00B8392A /* camera_capture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera_capture.hpp; sourceTree = "<group>"; };
+		5724EA3125C9C01800B8392A /* mic_capture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mic_capture.cpp; sourceTree = "<group>"; };
+		5724EA3225C9C01800B8392A /* mic_capture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mic_capture.hpp; sourceTree = "<group>"; };
+		5724EA3525C9C09F00B8392A /* app_capture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app_capture.cpp; sourceTree = "<group>"; };
+		5724EA3625C9C09F00B8392A /* app_capture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = app_capture.hpp; sourceTree = "<group>"; };
+		5724EA3925C9C0AD00B8392A /* sys_capture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sys_capture.cpp; sourceTree = "<group>"; };
+		5724EA3A25C9C0AD00B8392A /* sys_capture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sys_capture.hpp; sourceTree = "<group>"; };
+		5724EA3D25C9C0D900B8392A /* device_info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = device_info.h; sourceTree = "<group>"; };
 		572F665025C2ED78000C1410 /* libdevice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdevice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -33,9 +52,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5724EA2625C9BDFD00B8392A /* ios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
 		572F664725C2ED78000C1410 = {
 			isa = PBXGroup;
 			children = (
+				5724EA3D25C9C0D900B8392A /* device_info.h */,
+				5724EA3925C9C0AD00B8392A /* sys_capture.cpp */,
+				5724EA3A25C9C0AD00B8392A /* sys_capture.hpp */,
+				5724EA3525C9C09F00B8392A /* app_capture.cpp */,
+				5724EA3625C9C09F00B8392A /* app_capture.hpp */,
+				5724EA3125C9C01800B8392A /* mic_capture.cpp */,
+				5724EA3225C9C01800B8392A /* mic_capture.hpp */,
+				5724EA2C25C9BF6F00B8392A /* camera_capture.cpp */,
+				5724EA2D25C9BF6F00B8392A /* camera_capture.hpp */,
+				5724EA2725C9BE3D00B8392A /* device_context.cpp */,
+				5724EA2825C9BE3D00B8392A /* device_context.hpp */,
+				5724EA2625C9BDFD00B8392A /* ios */,
 				572F665125C2ED78000C1410 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EA3725C9C09F00B8392A /* app_capture.cpp in Sources */,
+				5724EA3B25C9C0AD00B8392A /* sys_capture.cpp in Sources */,
+				5724EA2925C9BE3D00B8392A /* device_context.cpp in Sources */,
+				5724EA2E25C9BF6F00B8392A /* camera_capture.cpp in Sources */,
+				5724EA3325C9C01800B8392A /* mic_capture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
