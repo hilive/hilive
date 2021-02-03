@@ -6,23 +6,23 @@
 //
 
 #include "device_context.hpp"
-#include <future>
+#include "app_capture.hpp"
 
 namespace hilive {
 namespace device {
 
-DeviceContext::DeviceContext() {}
+DeviceContext::DeviceContext() : app_capture_(AppCapture::Create()) {}
 
 DeviceContext::~DeviceContext() {}
 
-DeviceContext* DeviceContext::Instance() {
+std::shared_ptr<DeviceContext> DeviceContext::Instance() {
   static std::shared_ptr<DeviceContext> context;
   static std::once_flag onceflag;
   std::call_once(onceflag, [&] {
     context = std::shared_ptr<DeviceContext>(new DeviceContext());
   });
 
-  return context.get();
+  return context;
 }
 
 }

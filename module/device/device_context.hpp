@@ -6,7 +6,8 @@
 //
 
 #pragma once
-#include "device_info.h"
+#include <future>
+#include "app_capture.hpp"
 
 namespace hilive {
 namespace device {
@@ -14,23 +15,18 @@ namespace device {
 class DeviceContext {
  private:
   DeviceContext();
+
+ public:
   ~DeviceContext();
 
  public:
-  static DeviceContext* Instance();
+  static std::shared_ptr<DeviceContext> Instance();
 
  public:
-  DeviceCode StartSysCapture();
-  void StopSysCapture();
+  std::shared_ptr<AppCapture> app_capture() { return app_capture_; }
 
-  DeviceCode StartAppCapture();
-  void StopAppCapture();
-
-  DeviceCode StartMicCapture();
-  void StopMicCapture();
-
-  DeviceCode StartCameraCapture();
-  void StopCameraCapture();
+ public:
+  std::shared_ptr<AppCapture>   app_capture_;
 };
 
 }

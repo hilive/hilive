@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5724EA6425CB0AB500B8392A /* livesdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5724EA6325CB0AB500B8392A /* livesdk.framework */; };
 		572F657E25C2C0C6000C1410 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F657D25C2C0C6000C1410 /* AppDelegate.m */; };
 		572F658125C2C0C6000C1410 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 572F658025C2C0C6000C1410 /* SceneDelegate.m */; };
 		572F658425C2C0C6000C1410 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 572F658325C2C0C6000C1410 /* ViewController.mm */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5724EA6325CB0AB500B8392A /* livesdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = livesdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		572F657925C2C0C6000C1410 /* RealLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572F657C25C2C0C6000C1410 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		572F657D25C2C0C6000C1410 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EA6425CB0AB500B8392A /* livesdk.framework in Frameworks */,
 				572F65A725C2C1AB000C1410 /* CoreMedia.framework in Frameworks */,
 				572F65A125C2C18E000C1410 /* ReplayKit.framework in Frameworks */,
 				572F659E25C2C13B000C1410 /* AVFoundation.framework in Frameworks */,
@@ -100,6 +103,7 @@
 		572F659A25C2C135000C1410 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5724EA6325CB0AB500B8392A /* livesdk.framework */,
 				572F65A625C2C1AB000C1410 /* CoreMedia.framework */,
 				572F65A325C2C197000C1410 /* Foundation.framework */,
 				572F65A025C2C18E000C1410 /* ReplayKit.framework */,

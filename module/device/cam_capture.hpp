@@ -1,12 +1,11 @@
 //
-//  camera_capture.cpp
+//  cam_capture.hpp
 //  device
 //
 //  Created by cort xu on 2021/2/3.
 //
-
-#include "camera_capture.hpp"
-
+#pragma once
+#include "device_info.h"
 
 namespace hilive {
 namespace device {

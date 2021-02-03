@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5724EA6225CB0A9400B8392A /* libdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5724EA6125CB0A9400B8392A /* libdevice.a */; };
+		5724EA6925CB0D7300B8392A /* live_interface.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6725CB0D7300B8392A /* live_interface.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EA7025CB0D8000B8392A /* live_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */; };
+		5724EA7125CB0D8000B8392A /* live_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */; };
 		572F661125C2EBEB000C1410 /* livesdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 572F660F25C2EBEB000C1410 /* livesdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5724EA6125CB0A9400B8392A /* libdevice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdevice.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5724EA6725CB0D7300B8392A /* live_interface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = live_interface.hpp; sourceTree = "<group>"; };
+		5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = live_wrapper.cpp; sourceTree = "<group>"; };
+		5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = live_wrapper.hpp; sourceTree = "<group>"; };
 		572F660C25C2EBEB000C1410 /* livesdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = livesdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		572F660F25C2EBEB000C1410 /* livesdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livesdk.h; sourceTree = "<group>"; };
 		572F661025C2EBEB000C1410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,17 +29,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EA6225CB0A9400B8392A /* libdevice.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5724EA6025CB0A9400B8392A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5724EA6125CB0A9400B8392A /* libdevice.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5724EA6525CB0C8900B8392A /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				5724EA7325CB0E3B00B8392A /* include */,
+				5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */,
+				5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+		5724EA7325CB0E3B00B8392A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5724EA6725CB0D7300B8392A /* live_interface.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		572F660225C2EBEB000C1410 = {
 			isa = PBXGroup;
 			children = (
-				572F660E25C2EBEB000C1410 /* livesdk */,
+				572F661025C2EBEB000C1410 /* Info.plist */,
+				5724EA6525CB0C8900B8392A /* sources */,
+				572F660E25C2EBEB000C1410 /* ios */,
 				572F660D25C2EBEB000C1410 /* Products */,
+				5724EA6025CB0A9400B8392A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,13 +81,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		572F660E25C2EBEB000C1410 /* livesdk */ = {
+		572F660E25C2EBEB000C1410 /* ios */ = {
 			isa = PBXGroup;
 			children = (
 				572F660F25C2EBEB000C1410 /* livesdk.h */,
-				572F661025C2EBEB000C1410 /* Info.plist */,
 			);
-			path = livesdk;
+			path = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,6 +96,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EA7125CB0D8000B8392A /* live_wrapper.hpp in Headers */,
+				5724EA6925CB0D7300B8392A /* live_interface.hpp in Headers */,
 				572F661125C2EBEB000C1410 /* livesdk.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EA7025CB0D8000B8392A /* live_wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,46 +297,61 @@
 		572F661525C2EBEB000C1410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 823M6R4A85;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = livesdk/Info.plist;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = hilive.livesdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
 		572F661625C2EBEB000C1410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 823M6R4A85;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = livesdk/Info.plist;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = hilive.livesdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};

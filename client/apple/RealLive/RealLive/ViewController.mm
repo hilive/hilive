@@ -8,6 +8,9 @@
 #import "ViewController.h"
 #import <ReplayKit/RPScreenRecorder.h>
 #import "H264Encoder.h"
+#import <livesdk/livesdk.h>
+
+using namespace hilive::livesdk;
 
 @interface ViewController() <H264EncoderDelegate> {
 }
@@ -15,11 +18,15 @@
 @end
 
 @implementation ViewController {
-    FILE*   fph264;
+    FILE*           fph264;
+    LiveInterface*  live_interface;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    live_interface = LiveInterface::Create();
+    live_interface->JoinRoom();
 
     NSString* docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* path = [docDir stringByAppendingPathComponent:@"test.h264"];

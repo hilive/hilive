@@ -53,28 +53,16 @@ enum FrameType {
 enum MediaType {
   kMediaTypeNone = -1,
   kMediaTypeAudio = 0,
-  kMediaTypeVideo = 1,
+  kMediaTypeVideo,
 };
 
 enum CaptureType {
   kCaptureTypeNone = -1,
 
-  kCaptureTypeCameraVideo = 0,
-  kCaptureTypeMicAudio,
+  kCaptureTypeMicAudio = 0,
   kCaptureTypeAppAudio,
+  kCaptureTypeCameraVideo,
   kCaptureTypeAppVideo
-};
-
-struct VideoConfig {
-  uint32_t  width = 0;
-  uint32_t  height = 0;
-  uint32_t  fps = 0;
-};
-
-struct AudioConfig {
-  uint32_t  samplerate = 0;
-  uint32_t  channel = 0;
-  
 };
 
 }
