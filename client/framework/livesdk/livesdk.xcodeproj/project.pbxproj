@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5724EA6225CB0A9400B8392A /* libdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5724EA6125CB0A9400B8392A /* libdevice.a */; };
-		5724EA6925CB0D7300B8392A /* live_interface.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6725CB0D7300B8392A /* live_interface.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EA6925CB0D7300B8392A /* live_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6725CB0D7300B8392A /* live_interface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5724EA7025CB0D8000B8392A /* live_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */; };
-		5724EA7125CB0D8000B8392A /* live_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */; };
+		5724EA7125CB0D8000B8392A /* live_wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA6F25CB0D8000B8392A /* live_wrapper.h */; };
+		5724EA8025CC52F000B8392A /* live_callbacker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA7E25CC518100B8392A /* live_callbacker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EA8825CC58E700B8392A /* live_info.h in Headers */ = {isa = PBXBuildFile; fileRef = 5724EA8725CC58D300B8392A /* live_info.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		572F661125C2EBEB000C1410 /* livesdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 572F660F25C2EBEB000C1410 /* livesdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5724EA6125CB0A9400B8392A /* libdevice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libdevice.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5724EA6725CB0D7300B8392A /* live_interface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = live_interface.hpp; sourceTree = "<group>"; };
+		5724EA6725CB0D7300B8392A /* live_interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = live_interface.h; sourceTree = "<group>"; };
 		5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = live_wrapper.cpp; sourceTree = "<group>"; };
-		5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = live_wrapper.hpp; sourceTree = "<group>"; };
+		5724EA6F25CB0D8000B8392A /* live_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = live_wrapper.h; sourceTree = "<group>"; };
+		5724EA7E25CC518100B8392A /* live_callbacker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = live_callbacker.h; sourceTree = "<group>"; };
+		5724EA8725CC58D300B8392A /* live_info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = live_info.h; sourceTree = "<group>"; };
 		572F660C25C2EBEB000C1410 /* livesdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = livesdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		572F660F25C2EBEB000C1410 /* livesdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = livesdk.h; sourceTree = "<group>"; };
 		572F661025C2EBEB000C1410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,7 +53,7 @@
 			children = (
 				5724EA7325CB0E3B00B8392A /* include */,
 				5724EA6E25CB0D8000B8392A /* live_wrapper.cpp */,
-				5724EA6F25CB0D8000B8392A /* live_wrapper.hpp */,
+				5724EA6F25CB0D8000B8392A /* live_wrapper.h */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -57,7 +61,9 @@
 		5724EA7325CB0E3B00B8392A /* include */ = {
 			isa = PBXGroup;
 			children = (
-				5724EA6725CB0D7300B8392A /* live_interface.hpp */,
+				5724EA6725CB0D7300B8392A /* live_interface.h */,
+				5724EA7E25CC518100B8392A /* live_callbacker.h */,
+				5724EA8725CC58D300B8392A /* live_info.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -96,8 +102,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5724EA7125CB0D8000B8392A /* live_wrapper.hpp in Headers */,
-				5724EA6925CB0D7300B8392A /* live_interface.hpp in Headers */,
+				5724EA7125CB0D8000B8392A /* live_wrapper.h in Headers */,
+				5724EA8025CC52F000B8392A /* live_callbacker.h in Headers */,
+				5724EA8825CC58E700B8392A /* live_info.h in Headers */,
+				5724EA6925CB0D7300B8392A /* live_interface.h in Headers */,
 				572F661125C2EBEB000C1410 /* livesdk.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

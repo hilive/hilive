@@ -26,7 +26,6 @@ using namespace hilive::livesdk;
     [super viewDidLoad];
     
     live_interface = LiveInterface::Create();
-    live_interface->JoinRoom();
 
     NSString* docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* path = [docDir stringByAppendingPathComponent:@"test.h264"];
