@@ -7,12 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		572F65FB25C2EBDB000C1410 /* mediasdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 572F65F925C2EBDB000C1410 /* mediasdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAC025CE67FF00B8392A /* media_node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EABE25CE67FF00B8392A /* media_node.cpp */; };
+		5724EAC125CE67FF00B8392A /* media_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EABF25CE67FF00B8392A /* media_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAC625CE7FBA00B8392A /* media_context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAC425CE7FBA00B8392A /* media_context.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAEA25CE837A00B8392A /* rtmp_input_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAE825CE837A00B8392A /* rtmp_input_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAEF25CE838C00B8392A /* http_input_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAED25CE838C00B8392A /* http_input_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAF425CE83F400B8392A /* file_input_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAF225CE83F400B8392A /* file_input_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EAF925CE844A00B8392A /* file_output_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAF725CE844A00B8392A /* file_output_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB1525CE9B0200B8392A /* file_input_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB1325CE9B0200B8392A /* file_input_wrapper.cpp */; };
+		5724EB1625CE9B0200B8392A /* file_input_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB1425CE9B0200B8392A /* file_input_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB3B25CEA26F00B8392A /* stream_input_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB3925CEA26F00B8392A /* stream_input_wrapper.cpp */; };
+		5724EB3C25CEA26F00B8392A /* stream_input_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB3A25CEA26F00B8392A /* stream_input_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB4025CEA28600B8392A /* device_input_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB3E25CEA28600B8392A /* device_input_wrapper.cpp */; };
+		5724EB4125CEA28600B8392A /* device_input_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB3F25CEA28600B8392A /* device_input_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB4525CEA29E00B8392A /* rtmp_input_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB4325CEA29E00B8392A /* rtmp_input_wrapper.cpp */; };
+		5724EB4625CEA29E00B8392A /* rtmp_input_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB4425CEA29E00B8392A /* rtmp_input_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB4A25CEA2AF00B8392A /* http_input_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB4825CEA2AF00B8392A /* http_input_wrapper.cpp */; };
+		5724EB4B25CEA2AF00B8392A /* http_input_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB4925CEA2AF00B8392A /* http_input_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB5025CEA2E300B8392A /* file_output_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB4E25CEA2E300B8392A /* file_output_wrapper.cpp */; };
+		5724EB5125CEA2E300B8392A /* file_output_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB4F25CEA2E300B8392A /* file_output_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB5525CEA2F400B8392A /* device_output_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB5325CEA2F400B8392A /* device_output_wrapper.cpp */; };
+		5724EB5625CEA2F400B8392A /* device_output_wrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB5425CEA2F400B8392A /* device_output_wrapper.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB5A25CEAA5E00B8392A /* media_wrapper_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5724EB5825CEAA5E00B8392A /* media_wrapper_context.cpp */; };
+		5724EB5B25CEAA5E00B8392A /* media_wrapper_context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB5925CEAA5E00B8392A /* media_wrapper_context.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7125CEE14900B8392A /* media_info.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB0225CE84DE00B8392A /* media_info.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7225CEE14900B8392A /* media_result.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAC925CE7FD100B8392A /* media_result.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7325CEE14900B8392A /* media_buffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EAFE25CE84AE00B8392A /* media_buffer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7425CEE14900B8392A /* media_frame.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB0025CE84C300B8392A /* media_frame.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7525CEE14900B8392A /* stream_input_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB1025CE8CA900B8392A /* stream_input_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7625CEE14900B8392A /* device_input_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB0F25CE8C3E00B8392A /* device_input_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		5724EB7725CEE14900B8392A /* device_output_node.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5724EB1125CE8D5700B8392A /* device_output_node.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5724EABE25CE67FF00B8392A /* media_node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = media_node.cpp; sourceTree = "<group>"; };
+		5724EABF25CE67FF00B8392A /* media_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_node.hpp; sourceTree = "<group>"; };
+		5724EAC425CE7FBA00B8392A /* media_context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_context.hpp; sourceTree = "<group>"; };
+		5724EAC925CE7FD100B8392A /* media_result.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_result.hpp; sourceTree = "<group>"; };
+		5724EAE825CE837A00B8392A /* rtmp_input_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rtmp_input_node.hpp; sourceTree = "<group>"; };
+		5724EAED25CE838C00B8392A /* http_input_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = http_input_node.hpp; sourceTree = "<group>"; };
+		5724EAF225CE83F400B8392A /* file_input_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file_input_node.hpp; sourceTree = "<group>"; };
+		5724EAF725CE844A00B8392A /* file_output_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file_output_node.hpp; sourceTree = "<group>"; };
+		5724EAFE25CE84AE00B8392A /* media_buffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_buffer.hpp; sourceTree = "<group>"; };
+		5724EB0025CE84C300B8392A /* media_frame.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_frame.hpp; sourceTree = "<group>"; };
+		5724EB0225CE84DE00B8392A /* media_info.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_info.hpp; sourceTree = "<group>"; };
+		5724EB0F25CE8C3E00B8392A /* device_input_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = device_input_node.hpp; sourceTree = "<group>"; };
+		5724EB1025CE8CA900B8392A /* stream_input_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stream_input_node.hpp; sourceTree = "<group>"; };
+		5724EB1125CE8D5700B8392A /* device_output_node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = device_output_node.hpp; sourceTree = "<group>"; };
+		5724EB1325CE9B0200B8392A /* file_input_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_input_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB1425CE9B0200B8392A /* file_input_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file_input_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB3925CEA26F00B8392A /* stream_input_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stream_input_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB3A25CEA26F00B8392A /* stream_input_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stream_input_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB3E25CEA28600B8392A /* device_input_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = device_input_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB3F25CEA28600B8392A /* device_input_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = device_input_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB4325CEA29E00B8392A /* rtmp_input_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rtmp_input_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB4425CEA29E00B8392A /* rtmp_input_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rtmp_input_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB4825CEA2AF00B8392A /* http_input_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = http_input_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB4925CEA2AF00B8392A /* http_input_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = http_input_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB4E25CEA2E300B8392A /* file_output_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file_output_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB4F25CEA2E300B8392A /* file_output_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file_output_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB5325CEA2F400B8392A /* device_output_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = device_output_wrapper.cpp; sourceTree = "<group>"; };
+		5724EB5425CEA2F400B8392A /* device_output_wrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = device_output_wrapper.hpp; sourceTree = "<group>"; };
+		5724EB5825CEAA5E00B8392A /* media_wrapper_context.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = media_wrapper_context.cpp; sourceTree = "<group>"; };
+		5724EB5925CEAA5E00B8392A /* media_wrapper_context.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_wrapper_context.hpp; sourceTree = "<group>"; };
 		572F65F625C2EBDB000C1410 /* mediasdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mediasdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		572F65F925C2EBDB000C1410 /* mediasdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mediasdk.h; sourceTree = "<group>"; };
 		572F65FA25C2EBDB000C1410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -27,10 +85,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5724EA8E25CE312200B8392A /* api */ = {
+			isa = PBXGroup;
+			children = (
+				5724EB0225CE84DE00B8392A /* media_info.hpp */,
+				5724EAC925CE7FD100B8392A /* media_result.hpp */,
+				5724EAFE25CE84AE00B8392A /* media_buffer.hpp */,
+				5724EB0025CE84C300B8392A /* media_frame.hpp */,
+				5724EAC425CE7FBA00B8392A /* media_context.hpp */,
+				5724EABF25CE67FF00B8392A /* media_node.hpp */,
+				5724EAF225CE83F400B8392A /* file_input_node.hpp */,
+				5724EB1025CE8CA900B8392A /* stream_input_node.hpp */,
+				5724EB0F25CE8C3E00B8392A /* device_input_node.hpp */,
+				5724EAE825CE837A00B8392A /* rtmp_input_node.hpp */,
+				5724EAED25CE838C00B8392A /* http_input_node.hpp */,
+				5724EAF725CE844A00B8392A /* file_output_node.hpp */,
+				5724EB1125CE8D5700B8392A /* device_output_node.hpp */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		5724EA8F25CE312700B8392A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5724EB5825CEAA5E00B8392A /* media_wrapper_context.cpp */,
+				5724EB5925CEAA5E00B8392A /* media_wrapper_context.hpp */,
+				5724EABE25CE67FF00B8392A /* media_node.cpp */,
+				5724EADD25CE828800B8392A /* input */,
+				5724EADE25CE829100B8392A /* filter */,
+				5724EADF25CE829900B8392A /* output */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5724EADD25CE828800B8392A /* input */ = {
+			isa = PBXGroup;
+			children = (
+				5724EB1325CE9B0200B8392A /* file_input_wrapper.cpp */,
+				5724EB1425CE9B0200B8392A /* file_input_wrapper.hpp */,
+				5724EB3925CEA26F00B8392A /* stream_input_wrapper.cpp */,
+				5724EB3A25CEA26F00B8392A /* stream_input_wrapper.hpp */,
+				5724EB3E25CEA28600B8392A /* device_input_wrapper.cpp */,
+				5724EB3F25CEA28600B8392A /* device_input_wrapper.hpp */,
+				5724EB4325CEA29E00B8392A /* rtmp_input_wrapper.cpp */,
+				5724EB4425CEA29E00B8392A /* rtmp_input_wrapper.hpp */,
+				5724EB4825CEA2AF00B8392A /* http_input_wrapper.cpp */,
+				5724EB4925CEA2AF00B8392A /* http_input_wrapper.hpp */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		5724EADE25CE829100B8392A /* filter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = filter;
+			sourceTree = "<group>";
+		};
+		5724EADF25CE829900B8392A /* output */ = {
+			isa = PBXGroup;
+			children = (
+				5724EB4E25CEA2E300B8392A /* file_output_wrapper.cpp */,
+				5724EB4F25CEA2E300B8392A /* file_output_wrapper.hpp */,
+				5724EB5325CEA2F400B8392A /* device_output_wrapper.cpp */,
+				5724EB5425CEA2F400B8392A /* device_output_wrapper.hpp */,
+			);
+			path = output;
+			sourceTree = "<group>";
+		};
 		572F65EC25C2EBDB000C1410 = {
 			isa = PBXGroup;
 			children = (
-				572F65F825C2EBDB000C1410 /* mediasdk */,
+				5724EA8E25CE312200B8392A /* api */,
+				5724EA8F25CE312700B8392A /* src */,
+				572F65FA25C2EBDB000C1410 /* Info.plist */,
 				572F65F725C2EBDB000C1410 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,15 +171,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		572F65F825C2EBDB000C1410 /* mediasdk */ = {
-			isa = PBXGroup;
-			children = (
-				572F65F925C2EBDB000C1410 /* mediasdk.h */,
-				572F65FA25C2EBDB000C1410 /* Info.plist */,
-			);
-			path = mediasdk;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -59,7 +178,27 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572F65FB25C2EBDB000C1410 /* mediasdk.h in Headers */,
+				5724EB1625CE9B0200B8392A /* file_input_wrapper.hpp in Headers */,
+				5724EB3C25CEA26F00B8392A /* stream_input_wrapper.hpp in Headers */,
+				5724EB4625CEA29E00B8392A /* rtmp_input_wrapper.hpp in Headers */,
+				5724EAEA25CE837A00B8392A /* rtmp_input_node.hpp in Headers */,
+				5724EB4125CEA28600B8392A /* device_input_wrapper.hpp in Headers */,
+				5724EB5125CEA2E300B8392A /* file_output_wrapper.hpp in Headers */,
+				5724EAC125CE67FF00B8392A /* media_node.hpp in Headers */,
+				5724EAF425CE83F400B8392A /* file_input_node.hpp in Headers */,
+				5724EAEF25CE838C00B8392A /* http_input_node.hpp in Headers */,
+				5724EAF925CE844A00B8392A /* file_output_node.hpp in Headers */,
+				5724EB5625CEA2F400B8392A /* device_output_wrapper.hpp in Headers */,
+				5724EAC625CE7FBA00B8392A /* media_context.hpp in Headers */,
+				5724EB4B25CEA2AF00B8392A /* http_input_wrapper.hpp in Headers */,
+				5724EB5B25CEAA5E00B8392A /* media_wrapper_context.hpp in Headers */,
+				5724EB7125CEE14900B8392A /* media_info.hpp in Headers */,
+				5724EB7225CEE14900B8392A /* media_result.hpp in Headers */,
+				5724EB7325CEE14900B8392A /* media_buffer.hpp in Headers */,
+				5724EB7425CEE14900B8392A /* media_frame.hpp in Headers */,
+				5724EB7525CEE14900B8392A /* stream_input_node.hpp in Headers */,
+				5724EB7625CEE14900B8392A /* device_input_node.hpp in Headers */,
+				5724EB7725CEE14900B8392A /* device_output_node.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +269,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5724EB5525CEA2F400B8392A /* device_output_wrapper.cpp in Sources */,
+				5724EB5025CEA2E300B8392A /* file_output_wrapper.cpp in Sources */,
+				5724EB4525CEA29E00B8392A /* rtmp_input_wrapper.cpp in Sources */,
+				5724EAC025CE67FF00B8392A /* media_node.cpp in Sources */,
+				5724EB4025CEA28600B8392A /* device_input_wrapper.cpp in Sources */,
+				5724EB5A25CEAA5E00B8392A /* media_wrapper_context.cpp in Sources */,
+				5724EB4A25CEA2AF00B8392A /* http_input_wrapper.cpp in Sources */,
+				5724EB1525CE9B0200B8392A /* file_input_wrapper.cpp in Sources */,
+				5724EB3B25CEA26F00B8392A /* stream_input_wrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +411,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = mediasdk/Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/api",
+					"$(PROJECT_DIR)/../../../module/common",
+				);
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -286,7 +438,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = mediasdk/Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/api",
+					"$(PROJECT_DIR)/../../../module/common",
+				);
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

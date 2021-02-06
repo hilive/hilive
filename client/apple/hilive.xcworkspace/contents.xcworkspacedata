@@ -18,13 +18,7 @@
       location = "container:"
       name = "framework">
       <FileRef
-         location = "group:../framework/livesdk/livesdk.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:../framework/mediasdk/mediasdk.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:../framework/proxysdk/proxysdk.xcodeproj">
       </FileRef>
    </Group>
    <Group
