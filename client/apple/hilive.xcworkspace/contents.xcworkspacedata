@@ -25,10 +25,10 @@
       location = "container:"
       name = "demo">
       <FileRef
-         location = "group:RealLive/RealLive.xcodeproj">
+         location = "group:MediaPlayer/MediaPlayer.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:MediaPlayer/MediaPlayer.xcodeproj">
+         location = "group:RealLive/RealLive.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>
