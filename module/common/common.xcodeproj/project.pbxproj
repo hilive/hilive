@@ -23,8 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5724EA3F25C9C74C00B8392A /* media_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = media_config.h; sourceTree = "<group>"; };
-		5724EA5625CB002600B8392A /* platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		5724EA3F25C9C74C00B8392A /* media_config.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = media_config.hpp; sourceTree = "<group>"; };
+		5724EA5625CB002600B8392A /* platform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = platform.hpp; sourceTree = "<group>"; };
 		5724EA7925CB132800B8392A /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
 		5724EA7A25CB132800B8392A /* utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
 		5724EB6425CEAD4800B8392A /* logger_wrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = logger_wrapper.cpp; sourceTree = "<group>"; };
@@ -50,8 +50,8 @@
 				5724EB6525CEAD4800B8392A /* logger_wrapper.hpp */,
 				5724EA7925CB132800B8392A /* utils.cpp */,
 				5724EA7A25CB132800B8392A /* utils.hpp */,
-				5724EA5625CB002600B8392A /* platform.h */,
-				5724EA3F25C9C74C00B8392A /* media_config.h */,
+				5724EA5625CB002600B8392A /* platform.hpp */,
+				5724EA3F25C9C74C00B8392A /* media_config.hpp */,
 				572F662525C2ED52000C1410 /* Products */,
 			);
 			sourceTree = "<group>";

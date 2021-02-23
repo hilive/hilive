@@ -1,5 +1,5 @@
 //
-//  platform.h
+//  platform.hpp
 //  common
 //
 //  Created by cort xu on 2021/2/4.
