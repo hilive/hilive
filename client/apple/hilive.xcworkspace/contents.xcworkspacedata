@@ -25,6 +25,9 @@
       location = "container:"
       name = "demo">
       <FileRef
+         location = "group:DrawingBoard/DrawingBoard.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:MediaPlayer/MediaPlayer.xcodeproj">
       </FileRef>
       <FileRef
