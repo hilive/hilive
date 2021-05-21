@@ -6,9 +6,10 @@
 //
 
 #import "ViewController.h"
+#import "PaintView.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) PaintView* paintView;
 @end
 
 @implementation ViewController
@@ -19,12 +20,13 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
-}
 
-+ (Class)layerClass {
-  return [CAEAGLLayer class];
-}
+  CGFloat viewBottomSize = 50;
 
+  self.paintView = [[PaintView alloc] init];
+  self.paintView.backgroundColor = [UIColor redColor];
+  self.paintView.frame = CGRectMake(0, viewBottomSize, self.view.bounds.size.width, self.view.bounds.size.height - viewBottomSize * 2);
+  [self.view addSubview:self.paintView];
+}
 
 @end

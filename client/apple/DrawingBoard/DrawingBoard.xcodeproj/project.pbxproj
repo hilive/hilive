@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5700C3E72657B3280098934E /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700C3E62657B3280098934E /* PaintView.m */; };
+		5700C3EB2657DC690098934E /* EJTextureCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700C3E92657DC690098934E /* EJTextureCapture.m */; };
 		574D57D2264556A400231F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D1264556A400231F35 /* AppDelegate.m */; };
 		574D57D5264556A400231F35 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D4264556A400231F35 /* SceneDelegate.m */; };
 		574D57D8264556A400231F35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D7264556A400231F35 /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5700C3E62657B3280098934E /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
+		5700C3E82657B3330098934E /* PaintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		5700C3E92657DC690098934E /* EJTextureCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJTextureCapture.m; sourceTree = "<group>"; };
+		5700C3EA2657DC690098934E /* EJTextureCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJTextureCapture.h; sourceTree = "<group>"; };
 		574D57CD264556A400231F35 /* DrawingBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		574D57D0264556A400231F35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		574D57D1264556A400231F35 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,11 +75,15 @@
 				574D57D4264556A400231F35 /* SceneDelegate.m */,
 				574D57D6264556A400231F35 /* ViewController.h */,
 				574D57D7264556A400231F35 /* ViewController.m */,
+				5700C3EA2657DC690098934E /* EJTextureCapture.h */,
+				5700C3E92657DC690098934E /* EJTextureCapture.m */,
 				574D57D9264556A400231F35 /* Main.storyboard */,
 				574D57DC264556A400231F35 /* Assets.xcassets */,
 				574D57DE264556A400231F35 /* LaunchScreen.storyboard */,
 				574D57E1264556A400231F35 /* Info.plist */,
 				574D57E2264556A400231F35 /* main.m */,
+				5700C3E62657B3280098934E /* PaintView.m */,
+				5700C3E82657B3330098934E /* PaintView.h */,
 			);
 			path = DrawingBoard;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 				574D57D2264556A400231F35 /* AppDelegate.m in Sources */,
 				574D57E3264556A400231F35 /* main.m in Sources */,
 				574D57D5264556A400231F35 /* SceneDelegate.m in Sources */,
+				5700C3E72657B3280098934E /* PaintView.m in Sources */,
+				5700C3EB2657DC690098934E /* EJTextureCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
