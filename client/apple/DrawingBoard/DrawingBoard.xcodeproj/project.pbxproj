@@ -16,6 +16,9 @@
 		574D57DD264556A400231F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574D57DC264556A400231F35 /* Assets.xcassets */; };
 		574D57E0264556A400231F35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574D57DE264556A400231F35 /* LaunchScreen.storyboard */; };
 		574D57E3264556A400231F35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57E2264556A400231F35 /* main.m */; };
+		578196412658144100451A19 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 578196402658144100451A19 /* GLContext.m */; };
+		5781964526581A9D00451A19 /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5781964426581A9D00451A19 /* GLTexture.m */; };
+		5781964926581F1600451A19 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5781964826581F1600451A19 /* GLProgram.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,13 @@
 		574D57E1264556A400231F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574D57E2264556A400231F35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		574D57E9264556C300231F35 /* DrawingBoard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrawingBoard.entitlements; sourceTree = "<group>"; };
+		578196402658144100451A19 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
+		578196422658144B00451A19 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
+		57819643265814B000451A19 /* GLDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLDefine.h; sourceTree = "<group>"; };
+		5781964426581A9D00451A19 /* GLTexture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLTexture.m; sourceTree = "<group>"; };
+		5781964626581AA700451A19 /* GLTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLTexture.h; sourceTree = "<group>"; };
+		5781964726581F0B00451A19 /* GLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
+		5781964826581F1600451A19 /* GLProgram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		574D57CF264556A400231F35 /* DrawingBoard */ = {
 			isa = PBXGroup;
 			children = (
+				5781963C2658137000451A19 /* common */,
 				574D57E9264556C300231F35 /* DrawingBoard.entitlements */,
 				574D57D0264556A400231F35 /* AppDelegate.h */,
 				574D57D1264556A400231F35 /* AppDelegate.m */,
@@ -86,6 +97,20 @@
 				5700C3E82657B3330098934E /* PaintView.h */,
 			);
 			path = DrawingBoard;
+			sourceTree = "<group>";
+		};
+		5781963C2658137000451A19 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				57819643265814B000451A19 /* GLDefine.h */,
+				578196402658144100451A19 /* GLContext.m */,
+				578196422658144B00451A19 /* GLContext.h */,
+				5781964426581A9D00451A19 /* GLTexture.m */,
+				5781964626581AA700451A19 /* GLTexture.h */,
+				5781964726581F0B00451A19 /* GLProgram.h */,
+				5781964826581F1600451A19 /* GLProgram.m */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +184,12 @@
 			files = (
 				574D57D8264556A400231F35 /* ViewController.m in Sources */,
 				574D57D2264556A400231F35 /* AppDelegate.m in Sources */,
+				5781964526581A9D00451A19 /* GLTexture.m in Sources */,
 				574D57E3264556A400231F35 /* main.m in Sources */,
 				574D57D5264556A400231F35 /* SceneDelegate.m in Sources */,
+				5781964926581F1600451A19 /* GLProgram.m in Sources */,
 				5700C3E72657B3280098934E /* PaintView.m in Sources */,
+				578196412658144100451A19 /* GLContext.m in Sources */,
 				5700C3EB2657DC690098934E /* EJTextureCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

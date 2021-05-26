@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <CoreVideo/CoreVideo.h>
 
 @interface PaintView : UIView
+- (void)clear;
 @end
 
