@@ -15,7 +15,7 @@
 
 @synthesize textureCache;
 
--(id)init {
+- (id)init {
   if (self = [super init]) {
     _currContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
   }
@@ -23,7 +23,7 @@
   return self;
 }
 
--(id)initWithShare:(nullable EAGLSharegroup*)group {
+- (id)initWithShare:(nullable EAGLSharegroup*)group {
   if (self = [super init]) {
     if (group) {
       _currContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2 sharegroup:group];
@@ -43,19 +43,20 @@
   }
 }
 
--(CVOpenGLESTextureCacheRef)textureCache {
+- (CVOpenGLESTextureCacheRef)textureCache {
   if (_textureCache) {
       return _textureCache;
   }
 
   CVReturn ret = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, nil, _currContext, nil, &_textureCache);
   if (ret != kCVReturnSuccess) {
+    HILIVEINFO(@"CVOpenGLESTextureCacheCreate fail, ret: %d", ret);
   }
   
   return _textureCache;
 }
 
--(void)join {
+- (void)join {
   if (EAGLContext.currentContext == _currContext) {
       return;
   }
@@ -64,8 +65,9 @@
   [EAGLContext setCurrentContext:_currContext];
 }
 
--(void)leave {
+- (void)leave {
   [EAGLContext setCurrentContext:_prevContext];
+  _prevContext = nil;
 }
 
 @end

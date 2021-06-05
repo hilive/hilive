@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5700C3E72657B3280098934E /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700C3E62657B3280098934E /* PaintView.m */; };
-		5700C3EB2657DC690098934E /* EJTextureCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700C3E92657DC690098934E /* EJTextureCapture.m */; };
 		574D57D2264556A400231F35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D1264556A400231F35 /* AppDelegate.m */; };
 		574D57D5264556A400231F35 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D4264556A400231F35 /* SceneDelegate.m */; };
 		574D57D8264556A400231F35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574D57D7264556A400231F35 /* ViewController.m */; };
@@ -19,13 +18,13 @@
 		578196412658144100451A19 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 578196402658144100451A19 /* GLContext.m */; };
 		5781964526581A9D00451A19 /* GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5781964426581A9D00451A19 /* GLTexture.m */; };
 		5781964926581F1600451A19 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5781964826581F1600451A19 /* GLProgram.m */; };
+		57990CCE2663D41A0039746A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57990CCD2663D41A0039746A /* OpenGLES.framework */; };
+		57990D062663E1EF0039746A /* PaintContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990D052663E1EF0039746A /* PaintContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5700C3E62657B3280098934E /* PaintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
 		5700C3E82657B3330098934E /* PaintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
-		5700C3E92657DC690098934E /* EJTextureCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJTextureCapture.m; sourceTree = "<group>"; };
-		5700C3EA2657DC690098934E /* EJTextureCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJTextureCapture.h; sourceTree = "<group>"; };
 		574D57CD264556A400231F35 /* DrawingBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		574D57D0264556A400231F35 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		574D57D1264556A400231F35 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +45,9 @@
 		5781964626581AA700451A19 /* GLTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLTexture.h; sourceTree = "<group>"; };
 		5781964726581F0B00451A19 /* GLProgram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		5781964826581F1600451A19 /* GLProgram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
+		57990CCD2663D41A0039746A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		57990D052663E1EF0039746A /* PaintContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaintContext.m; sourceTree = "<group>"; };
+		57990D072663E1FC0039746A /* PaintContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaintContext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57990CCE2663D41A0039746A /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 			children = (
 				574D57CF264556A400231F35 /* DrawingBoard */,
 				574D57CE264556A400231F35 /* Products */,
+				57990CCC2663D41A0039746A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,8 +90,6 @@
 				574D57D4264556A400231F35 /* SceneDelegate.m */,
 				574D57D6264556A400231F35 /* ViewController.h */,
 				574D57D7264556A400231F35 /* ViewController.m */,
-				5700C3EA2657DC690098934E /* EJTextureCapture.h */,
-				5700C3E92657DC690098934E /* EJTextureCapture.m */,
 				574D57D9264556A400231F35 /* Main.storyboard */,
 				574D57DC264556A400231F35 /* Assets.xcassets */,
 				574D57DE264556A400231F35 /* LaunchScreen.storyboard */,
@@ -95,6 +97,8 @@
 				574D57E2264556A400231F35 /* main.m */,
 				5700C3E62657B3280098934E /* PaintView.m */,
 				5700C3E82657B3330098934E /* PaintView.h */,
+				57990D052663E1EF0039746A /* PaintContext.m */,
+				57990D072663E1FC0039746A /* PaintContext.h */,
 			);
 			path = DrawingBoard;
 			sourceTree = "<group>";
@@ -111,6 +115,14 @@
 				5781964826581F1600451A19 /* GLProgram.m */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		57990CCC2663D41A0039746A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57990CCD2663D41A0039746A /* OpenGLES.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +200,9 @@
 				574D57E3264556A400231F35 /* main.m in Sources */,
 				574D57D5264556A400231F35 /* SceneDelegate.m in Sources */,
 				5781964926581F1600451A19 /* GLProgram.m in Sources */,
+				57990D062663E1EF0039746A /* PaintContext.m in Sources */,
 				5700C3E72657B3280098934E /* PaintView.m in Sources */,
 				578196412658144100451A19 /* GLContext.m in Sources */,
-				5700C3EB2657DC690098934E /* EJTextureCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

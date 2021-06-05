@@ -11,11 +11,11 @@
 
 @interface GLProgram : NSObject
 @property (nonatomic, assign, readonly) BOOL ready;
-@property (nonatomic, assign, readonly) GLuint programId;
+@property (nonatomic, assign, readonly) GLuint program;
 - (BOOL)attach:(const char*)vShader fragShader:(const char*)fShader;
 - (void)use;
-- (GLint)getAttribLocation:(const char*)name;
-- (GLint)getUniformLocation:(const char*)name;
+- (GLint)getAttrib:(const char*)name;
+- (GLint)getUniform:(const char*)name;
 - (void)detach;
 @end
 

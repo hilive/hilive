@@ -8,12 +8,14 @@
 #import "GLProgram.h"
 
 @implementation GLProgram {
-  GLuint _ready;
-  GLuint _programId;
+  BOOL    _ready;
+  GLuint  _program;
+  GLuint  _vertexShader;
+  GLuint  _fragmentShader;
 }
 
 @synthesize ready = _ready;
-@synthesize programId = _programId;
+@synthesize program = _program;
 
 - (void)dealloc {
   [self detach];
@@ -25,33 +27,41 @@
       break;
     }
     
-    GLuint vHandle = 0;
-    if (![self compileShader:vShader type:GL_VERTEX_SHADER handle:vHandle]) {
-      break;
+    if (![self compileShader:vShader withType:GL_VERTEX_SHADER shaderHandle:&_vertexShader]) {
+      HILIVEINFO(@"createVertexShader fail");
+      return NO;
     }
     
-    GLuint fHandle = 0;
-    if (![self compileShader:fShader type:GL_FRAGMENT_SHADER handle:fHandle]) {
-      break;
+    if (![self compileShader:fShader withType:GL_FRAGMENT_SHADER shaderHandle:&_fragmentShader]) {
+      HILIVEINFO(@"createFragmentShader fail");
+      return NO;
     }
     
-    _programId = glCreateProgram();
-    glAttachShader(_programId, vShader);
-    glAttachShader(_programId, fShader);
-    glLinkProgram(_programId);
+    _program = glCreateProgram();
     
-    glValidateProgram(_programId);
-    const uint32_t kLogSize = 1024;
-    GLchar message[kLogSize + 1] = {0};
-    glGetProgramiv(handle, kLogSize, 0, message);
-    printf("Program compile log: %s\r\n", message);
+    glAttachShader(_program, _vertexShader);
+    glAttachShader(_program, _fragmentShader);
+    
+    glLinkProgram(_program);
+    
+    glValidateProgram(_program);
+    
+    GLint logLen = 0;
+    glGetProgramiv(_program, GL_INFO_LOG_LENGTH, &logLen);
+    if (logLen > 0) {
+      GLchar *log = (GLchar *)malloc(logLen + 1);
+      glGetProgramInfoLog(_program, logLen, &logLen, log);
+      HILIVEINFO(@"shader, log, %s", log);
+      free(log);
+    }
     
     GLint status = 0;
-    glGetProgramiv(filterProgram, GL_LINK_STATUS, &status);
+    glGetProgramiv(_program, GL_LINK_STATUS, &status);
     if (status == GL_FALSE) {
-      break;
+      HILIVEINFO(@"shader, link fail");
+      return NO;
     }
-    
+
     _ready = YES;
   } while (false);
   return _ready;
@@ -62,59 +72,71 @@
     return;
   }
   
-  glUseProgram(_programId);
+  glUseProgram(_program);
 }
 
-- (GLint)getAttribLocation:(const char*)name {
-    if (!_ready) {
-        return -1;
-    }
-
-    return glGetAttribLocation(_programId, name);
+- (GLint)getAttrib:(const char*)name {
+  if (!_ready) {
+    return -1;
+  }
+  
+  return glGetAttribLocation(_program, name);
 }
 
-- (GLint)getUniformLocation:(const char*)name {
-    if (!_ready) {
-        return -1;
-    }
-
-    return glGetUniformLocation(_programId, name);
+- (GLint)getUniform:(const char*)name {
+  if (!_ready) {
+    return -1;
+  }
+  
+  return glGetUniformLocation(_program, name);
 }
 
 - (void)detach {
-  if (_programId) {
-    glDeleteProgram(_programId);
-    _programId = 0;
+  if (_program) {
+    if (_vertexShader) {
+      glDetachShader(_program, _vertexShader);
+      glDeleteShader(_vertexShader);
+      _vertexShader = 0;
+    }
+    
+    if (_fragmentShader) {
+      glDetachShader(_program, _fragmentShader);
+      glDeleteShader(_fragmentShader);
+      _fragmentShader = 0;
+    }
+    
+    glDeleteProgram(_program);
+    _program = 0;
   }
+  
+  _ready = NO;
 }
 
-- (BOOL)compileShader:(const char*)shaderData type:(GLenum)type handle:(GLuint&)handle {
-  if (!shaderData) {
-    return NO;
-  }
-  
+- (BOOL)compileShader:(const char*)shaderData withType:(GLenum)shaderType shaderHandle:(GLuint*)shaderHandle {
   // create ID for shader
-  handle = glCreateShader(type);
-  if (handle == 0 || handle == GL_INVALID_ENUM) {
-    return NO;
-  }
+  GLuint handle = glCreateShader(shaderType);
+  *shaderHandle = handle;
   
   // define shader text
-  glShaderSource(handle, 1, &shaderData, NULL);
+  int shaderLength = (int)strlen(shaderData);
+  glShaderSource(handle, 1, &shaderData, &shaderLength);
   
   // compile shader
   glCompileShader(handle);
   
-  const uint32_t kLogSize = 1024;
-  GLchar message[kLogSize + 1] = {0};
-  glGetShaderInfoLog(handle, kLogSize, 0, message);
-  printf("Shader compile log: %s\r\n", message);
+  GLint logLen = 0;
+  glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &logLen);
+  if (logLen > 0) {
+    GLchar* log = (GLchar *)malloc(logLen + 1);
+    glGetShaderInfoLog(handle, logLen, &logLen, log);
+    HILIVEINFO(@"compileShader, log, %s", log);
+    free(log);
+  }
   
   // verify the compiling
-  GLint sucess = 0;
-  glGetShaderiv(handle, GL_COMPILE_STATUS, &sucess);
+  GLint status = 0;
+  glGetShaderiv(handle, GL_COMPILE_STATUS, &status);
   
-  return sucess != GL_FALSE ? YES : NO;
+  return status != GL_FALSE;
 }
-
 @end

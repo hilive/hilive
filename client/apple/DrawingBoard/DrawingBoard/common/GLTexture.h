@@ -12,7 +12,7 @@
 @interface GLTexture : NSObject
 @property (nonatomic, assign, readonly) BOOL ready;
 @property (nonatomic, assign, readonly) GLuint textureId;
-@property (nonatomic, strong, readonly) CVPixelBufferRef textureBuffer;
+@property (nonatomic, readonly) CVPixelBufferRef textureBuffer;
 -(BOOL)resize:(CVOpenGLESTextureCacheRef)cache width:(uint32_t)width height:(uint32_t)height;
 @end
 

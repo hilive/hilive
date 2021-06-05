@@ -56,8 +56,8 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
 
 @interface PaintView()
 @property (nonatomic, strong) GLContext* context;
-@property (nonatomic, strong) GLTexture* presentTexture;
-@property (nonatomic, strong) GLTexture* flipTexture;
+@property (nonatomic, strong) GLTexture* presentGlTexture;
+@property (nonatomic, strong) GLTexture* flipGlTexture;
 @property (nonatomic, strong) GLProgram* presentProgram;
 @property (nonatomic, strong) GLProgram* flipProgram;
 @property (nonatomic, assign) GLuint frameBuffer;
@@ -65,9 +65,9 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
 @end
 
 @implementation PaintView {
-  BOOL    ready;
-  GLint   pixelWidth;
-  GLint   pixelHeigh;
+  BOOL    _ready;
+  GLint   _pixelWidth;
+  GLint   _pixelHeigh;
   
   GLuint  _presentVao;
   GLuint  _presentVbo;
@@ -83,9 +83,6 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
   GLuint  _flipCoords;
   GLuint  _flipTexture;
 }
-
-@synthesize available;
-@synthesize pixelBuffer;
 
 - (instancetype)init {
   if (self = [super init]) {
@@ -138,8 +135,8 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
     _renderBuffer = 0;
   }
   
-  _presentTexture = nil;
-  _flipTexture = nil;
+  _presentGlTexture = nil;
+  _flipGlTexture = nil;
   
   _presentProgram = nil;
   _flipProgram = nil;
@@ -154,8 +151,8 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
 
 - (void)setup {
   _context = [[GLContext alloc] initWithShare:nil];
-  _presentTexture = [GLTexture new];
-  _flipTexture = [GLTexture new];
+  _presentGlTexture = [GLTexture new];
+  _flipGlTexture = [GLTexture new];
   _presentProgram = [GLProgram new];
   _flipProgram = [GLProgram new];
   [_context join];
@@ -165,9 +162,9 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
     }
     
     [_presentProgram use];
-    _presentPosition = [_presentProgram getAttribLocation:"position"];
-    _presentCoords = [_presentProgram getAttribLocation:"texcoord"];
-    _presentTexture = [_presentProgram getUniformLocation:"my_texture"];
+    _presentPosition = [_presentProgram getAttrib:"position"];
+    _presentCoords = [_presentProgram getAttrib:"texcoord"];
+    _presentTexture = [_presentProgram getUniform:"my_texture"];
     
     glGenVertexArraysOES(1, &_presentVao);
     glGenBuffers(1, &_presentVbo);
@@ -194,9 +191,9 @@ const GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
     }
 
     [_flipProgram use];
-    _flipPosition = [_flipProgram getAttribLocation:"position"];
-    _flipCoords = [_flipProgram getAttribLocation:"texcoord"];
-    _flipTexture = [_flipProgram getUniformLocation:"my_texture"];
+    _flipPosition = [_flipProgram getAttrib:"position"];
+    _flipCoords = [_flipProgram getAttrib:"texcoord"];
+    _flipTexture = [_flipProgram getUniform:"my_texture"];
     
     glGenVertexArraysOES(1, &_flipVao);
     glGenBuffers(1, &_flipVbo);

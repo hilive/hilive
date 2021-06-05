@@ -8,11 +8,11 @@
 #import "GLTexture.h"
 
 @implementation GLTexture {
-  BOOL      _ready;
-  uint32_t  _width;
-  uint32_t  _height;
-  GLuint    _textureId;
-  GLuint    _textureBuffer;
+  BOOL                _ready;
+  uint32_t            _width;
+  uint32_t            _height;
+  GLuint              _textureId;
+  CVPixelBufferRef    _textureBuffer;
 }
 
 @synthesize ready = _ready;
@@ -52,8 +52,8 @@
                                                            NULL,
                                                            GL_TEXTURE_2D,
                                                            GL_RGBA,
-                                                           w,
-                                                           h,
+                                                           width,
+                                                           height,
                                                            GL_BGRA,
                                                            GL_UNSIGNED_BYTE,
                                                            0,
@@ -65,6 +65,10 @@
     _textureId = CVOpenGLESTextureGetName(pixelTexture);
     CFRelease(pixelTexture);
     pixelTexture = nil;
+    
+    _width = width;
+    _height = height;
+    
     _ready = YES;
   } while (false);
   
