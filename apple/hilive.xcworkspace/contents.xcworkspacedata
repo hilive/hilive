@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "module">
+   </Group>
+   <Group
+      location = "container:"
+      name = "framework">
+   </Group>
+   <Group
+      location = "container:"
+      name = "app">
+      <FileRef
+         location = "group:app/OKWeb/OKWeb.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:app/DrawingBoard/DrawingBoard.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:app/MediaPlayer/MediaPlayer.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:app/RealLive/RealLive.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>
