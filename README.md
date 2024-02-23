@@ -29,3 +29,6 @@ Here are some ideas to get you started:
 - [终有一别到时代落幕](/2024/02/%E7%BB%88%E6%9C%89%E4%B8%80%E5%88%AB%E5%88%B0%E6%97%B6%E4%BB%A3%E8%90%BD%E5%B9%95/)
 - [HTTP实践：从零开始用 C++ 实现一个轻量级 HTTP 客户端库](/2024/01/http%E5%AE%9E%E8%B7%B5%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%94%A8-c-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%BD%BB%E9%87%8F%E7%BA%A7-http-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BA%93/)
 <!-- BLOG-POST-LIST:END -->
+
+# 加好友一起学习流媒体
+![](https://cortxu.com/images/wechat.jpg)
