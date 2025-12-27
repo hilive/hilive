@@ -140,7 +140,7 @@ class PlayerNotifier extends StateNotifier<PlayerState> {
       isLoading: true,
     );
 
-    await _audioPlayer.setUrl(track.audioUrl);
+    await _setAudioSource(track.audioUrl);
     await _audioPlayer.play();
   }
 
@@ -154,8 +154,29 @@ class PlayerNotifier extends StateNotifier<PlayerState> {
       isLoading: true,
     );
 
-    await _audioPlayer.setUrl(track.audioUrl);
+    await _setAudioSource(track.audioUrl);
     await _audioPlayer.play();
+  }
+
+  /// 设置音频源，自动判断是本地文件还是网络 URL
+  Future<void> _setAudioSource(String path) async {
+    if (_isLocalFile(path)) {
+      // 本地文件使用 setFilePath
+      await _audioPlayer.setFilePath(path);
+    } else {
+      // 网络 URL 使用 setUrl
+      await _audioPlayer.setUrl(path);
+    }
+  }
+
+  /// 判断是否为本地文件路径
+  bool _isLocalFile(String path) {
+    // macOS/Linux 绝对路径以 / 开头
+    // Windows 绝对路径以 盘符: 开头（如 C:\）
+    // file:// 协议也是本地文件
+    return path.startsWith('/') ||
+        path.startsWith('file://') ||
+        RegExp(r'^[A-Za-z]:\\').hasMatch(path);
   }
 
   Future<void> play() async {

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/providers/music_provider.dart';
 import '../../shared/widgets/music_tile.dart';
+import 'local/widgets/local_music_tab.dart';
 
 class LibraryPage extends ConsumerStatefulWidget {
   const LibraryPage({super.key});
@@ -11,12 +12,15 @@ class LibraryPage extends ConsumerStatefulWidget {
   ConsumerState<LibraryPage> createState() => _LibraryPageState();
 }
 
-class _LibraryPageState extends ConsumerState<LibraryPage> {
+class _LibraryPageState extends ConsumerState<LibraryPage>
+    with SingleTickerProviderStateMixin {
   final _scrollController = ScrollController();
+  late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: 2, vsync: this);
     _scrollController.addListener(_onScroll);
     Future.microtask(() {
       final musicState = ref.read(musicProvider);
@@ -29,11 +33,12 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels >= 
+    if (_scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent - 200) {
       ref.read(musicProvider.notifier).loadMusic();
     }
@@ -41,8 +46,6 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
 
   @override
   Widget build(BuildContext context) {
-    final musicState = ref.watch(musicProvider);
-
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -61,106 +64,175 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
                     ),
                   ),
                   const Spacer(),
-                  // Sort button
-                  IconButton(
-                    icon: const Icon(Icons.sort, color: AppTheme.textPrimary),
-                    onPressed: _showSortOptions,
-                  ),
-                  // Upload button
-                  IconButton(
-                    icon: const Icon(Icons.upload, color: AppTheme.textPrimary),
-                    onPressed: _showUploadDialog,
-                  ),
                 ],
               ),
             ),
 
-            // Stats
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  _buildStatCard(
-                    icon: Icons.music_note,
-                    label: '歌曲',
-                    value: '${musicState.total}',
-                    color: AppTheme.primaryColor,
-                  ),
-                  const SizedBox(width: 12),
-                  _buildStatCard(
-                    icon: Icons.person,
-                    label: '艺术家',
-                    value: '-',
-                    color: AppTheme.secondaryColor,
-                  ),
-                  const SizedBox(width: 12),
-                  _buildStatCard(
-                    icon: Icons.album,
-                    label: '专辑',
-                    value: '-',
-                    color: AppTheme.accentColor,
-                  ),
+            // Tab bar
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: AppTheme.cardColor,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: TabBar(
+                controller: _tabController,
+                indicator: BoxDecoration(
+                  color: AppTheme.primaryColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorPadding: const EdgeInsets.all(4),
+                labelColor: Colors.white,
+                unselectedLabelColor: AppTheme.textSecondary,
+                labelStyle: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+                unselectedLabelStyle: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+                dividerColor: Colors.transparent,
+                tabs: const [
+                  Tab(text: '在线'),
+                  Tab(text: '本地'),
                 ],
               ),
             ),
             const SizedBox(height: 16),
 
-            // Music list
+            // Tab content
             Expanded(
-              child: musicState.isLoading && musicState.items.isEmpty
-                  ? const Center(
-                      child: CircularProgressIndicator(color: AppTheme.primaryColor),
-                    )
-                  : musicState.items.isEmpty
-                      ? const Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.library_music,
-                                size: 64,
-                                color: AppTheme.textTertiary,
-                              ),
-                              SizedBox(height: 16),
-                              Text(
-                                '曲库是空的',
-                                style: TextStyle(
-                                  color: AppTheme.textSecondary,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      : RefreshIndicator(
-                          onRefresh: () => ref.read(musicProvider.notifier).refresh(),
-                          color: AppTheme.primaryColor,
-                          backgroundColor: AppTheme.surfaceColor,
-                          child: ListView.builder(
-                            controller: _scrollController,
-                            itemCount: musicState.items.length + (musicState.hasMore ? 1 : 0),
-                            itemBuilder: (context, index) {
-                              if (index >= musicState.items.length) {
-                                return const Padding(
-                                  padding: EdgeInsets.all(16),
-                                  child: Center(
-                                    child: CircularProgressIndicator(
-                                      color: AppTheme.primaryColor,
-                                    ),
-                                  ),
-                                );
-                              }
-                              return MusicTile(
-                                music: musicState.items[index],
-                                queue: musicState.items,
-                              );
-                            },
-                          ),
-                        ),
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  // 在线音乐标签
+                  _buildOnlineMusicTab(),
+                  // 本地音乐标签
+                  const LocalMusicTab(),
+                ],
+              ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildOnlineMusicTab() {
+    final musicState = ref.watch(musicProvider);
+
+    return Column(
+      children: [
+        // 操作栏
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              // Stats
+              _buildStatCard(
+                icon: Icons.music_note,
+                label: '歌曲',
+                value: '${musicState.total}',
+                color: AppTheme.primaryColor,
+              ),
+              const SizedBox(width: 12),
+              _buildStatCard(
+                icon: Icons.person,
+                label: '艺术家',
+                value: '-',
+                color: AppTheme.secondaryColor,
+              ),
+              const SizedBox(width: 12),
+              _buildStatCard(
+                icon: Icons.album,
+                label: '专辑',
+                value: '-',
+                color: AppTheme.accentColor,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 8),
+
+        // 操作按钮
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // Sort button
+              IconButton(
+                icon: const Icon(Icons.sort, color: AppTheme.textPrimary),
+                onPressed: _showSortOptions,
+              ),
+              // Upload button
+              IconButton(
+                icon: const Icon(Icons.upload, color: AppTheme.textPrimary),
+                onPressed: _showUploadDialog,
+              ),
+            ],
+          ),
+        ),
+
+        // Music list
+        Expanded(
+          child: musicState.isLoading && musicState.items.isEmpty
+              ? const Center(
+                  child:
+                      CircularProgressIndicator(color: AppTheme.primaryColor),
+                )
+              : musicState.items.isEmpty
+                  ? const Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.library_music,
+                            size: 64,
+                            color: AppTheme.textTertiary,
+                          ),
+                          SizedBox(height: 16),
+                          Text(
+                            '曲库是空的',
+                            style: TextStyle(
+                              color: AppTheme.textSecondary,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  : RefreshIndicator(
+                      onRefresh: () =>
+                          ref.read(musicProvider.notifier).refresh(),
+                      color: AppTheme.primaryColor,
+                      backgroundColor: AppTheme.surfaceColor,
+                      child: ListView.builder(
+                        controller: _scrollController,
+                        itemCount: musicState.items.length +
+                            (musicState.hasMore ? 1 : 0),
+                        itemBuilder: (context, index) {
+                          if (index >= musicState.items.length) {
+                            return const Padding(
+                              padding: EdgeInsets.all(16),
+                              child: Center(
+                                child: CircularProgressIndicator(
+                                  color: AppTheme.primaryColor,
+                                ),
+                              ),
+                            );
+                          }
+                          return MusicTile(
+                            music: musicState.items[index],
+                            queue: musicState.items,
+                          );
+                        },
+                      ),
+                    ),
+        ),
+      ],
     );
   }
 
@@ -235,18 +307,23 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.access_time, color: AppTheme.textPrimary),
-              title: const Text('最近添加', style: TextStyle(color: AppTheme.textPrimary)),
+              leading:
+                  const Icon(Icons.access_time, color: AppTheme.textPrimary),
+              title: const Text('最近添加',
+                  style: TextStyle(color: AppTheme.textPrimary)),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: const Icon(Icons.sort_by_alpha, color: AppTheme.textPrimary),
-              title: const Text('按标题', style: TextStyle(color: AppTheme.textPrimary)),
+              leading:
+                  const Icon(Icons.sort_by_alpha, color: AppTheme.textPrimary),
+              title: const Text('按标题',
+                  style: TextStyle(color: AppTheme.textPrimary)),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: const Icon(Icons.person, color: AppTheme.textPrimary),
-              title: const Text('按艺术家', style: TextStyle(color: AppTheme.textPrimary)),
+              title: const Text('按艺术家',
+                  style: TextStyle(color: AppTheme.textPrimary)),
               onTap: () => Navigator.pop(context),
             ),
             const SizedBox(height: 8),
@@ -261,7 +338,8 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: AppTheme.surfaceColor,
-        title: const Text('上传音乐', style: TextStyle(color: AppTheme.textPrimary)),
+        title:
+            const Text('上传音乐', style: TextStyle(color: AppTheme.textPrimary)),
         content: const Text(
           '音乐上传功能需要在桌面端使用。\n\n支持的格式：MP3, FLAC, WAV, AAC',
           style: TextStyle(color: AppTheme.textSecondary),
