@@ -1,0 +1,99 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'playlist.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+Playlist _$PlaylistFromJson(Map<String, dynamic> json) => Playlist(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      description: json['description'] as String?,
+      coverUrl: json['coverUrl'] as String?,
+      userId: json['userId'] as String,
+      isPublic: json['isPublic'] as bool? ?? false,
+      trackCount: (json['trackCount'] as num?)?.toInt() ?? 0,
+      totalDuration: (json['totalDuration'] as num?)?.toInt() ?? 0,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
+    );
+
+Map<String, dynamic> _$PlaylistToJson(Playlist instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
+      'coverUrl': instance.coverUrl,
+      'userId': instance.userId,
+      'isPublic': instance.isPublic,
+      'trackCount': instance.trackCount,
+      'totalDuration': instance.totalDuration,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
+    };
+
+PlaylistTrack _$PlaylistTrackFromJson(Map<String, dynamic> json) =>
+    PlaylistTrack(
+      id: json['id'] as String,
+      playlistId: json['playlistId'] as String,
+      musicId: json['musicId'] as String,
+      position: (json['position'] as num).toInt(),
+      addedAt: DateTime.parse(json['addedAt'] as String),
+    );
+
+Map<String, dynamic> _$PlaylistTrackToJson(PlaylistTrack instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'playlistId': instance.playlistId,
+      'musicId': instance.musicId,
+      'position': instance.position,
+      'addedAt': instance.addedAt.toIso8601String(),
+    };
+
+PlaylistWithTracks _$PlaylistWithTracksFromJson(Map<String, dynamic> json) =>
+    PlaylistWithTracks(
+      playlist: Playlist.fromJson(json['playlist'] as Map<String, dynamic>),
+      tracks: (json['tracks'] as List<dynamic>)
+          .map((e) => Music.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PlaylistWithTracksToJson(PlaylistWithTracks instance) =>
+    <String, dynamic>{
+      'playlist': instance.playlist,
+      'tracks': instance.tracks,
+    };
+
+CreatePlaylistRequest _$CreatePlaylistRequestFromJson(
+        Map<String, dynamic> json) =>
+    CreatePlaylistRequest(
+      name: json['name'] as String,
+      description: json['description'] as String?,
+      isPublic: json['isPublic'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$CreatePlaylistRequestToJson(
+        CreatePlaylistRequest instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+      'isPublic': instance.isPublic,
+    };
+
+UpdatePlaylistRequest _$UpdatePlaylistRequestFromJson(
+        Map<String, dynamic> json) =>
+    UpdatePlaylistRequest(
+      name: json['name'] as String?,
+      description: json['description'] as String?,
+      isPublic: json['isPublic'] as bool?,
+    );
+
+Map<String, dynamic> _$UpdatePlaylistRequestToJson(
+        UpdatePlaylistRequest instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'description': instance.description,
+      'isPublic': instance.isPublic,
+    };

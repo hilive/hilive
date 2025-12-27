@@ -1,0 +1,15 @@
+name: shared
+description: Shared models and constants for music player app
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  json_annotation: ^4.8.1
+  equatable: ^2.0.5
+
+dev_dependencies:
+  json_serializable: ^6.7.1
+  build_runner: ^2.4.6
